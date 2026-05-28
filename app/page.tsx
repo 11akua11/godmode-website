@@ -8,8 +8,8 @@ import { gsap } from "gsap";
 
 const navItems = ["Protocols", "Apparel", "Supplements", "Journal", "About", "Community"];
 
-const protocolCheckoutUrl = "https://buy.stripe.com/5kQ5kx5mp1FO9FRbEc0Ba00";
-const activationCheckoutUrl = "https://buy.stripe.com/00weV74ildowaJVeQo0Ba01";
+const protocolCheckoutUrl = "https://buy.stripe.com/cNiaER3eh0BK3htfUs0Ba02";
+const activationCheckoutUrl = "https://buy.stripe.com/cNiaER3eh0BK3htfUs0Ba02";
 
 const protocols = [
   {

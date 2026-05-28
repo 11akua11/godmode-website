@@ -115,10 +115,6 @@ body {
   background: linear-gradient(90deg, rgba(11, 11, 11, 0.54) 0%, rgba(11, 11, 11, 0.08) 38%, rgba(11, 11, 11, 0.3) 100%);
 }
 
-.hero-mobile-athlete {
-  display: none;
-}
-
 .hero-brand-layer {
   --hero-shift: 0px;
   position: absolute;
@@ -132,6 +128,17 @@ body {
   transition: transform 120ms linear;
   filter: drop-shadow(0 28px 44px rgba(0, 0, 0, 0.62));
   will-change: transform;
+  isolation: isolate;
+}
+
+.hero-brand-layer::before {
+  content: "";
+  position: absolute;
+  inset: -2.25rem -2rem;
+  z-index: -1;
+  background: radial-gradient(circle at 38% 45%, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.36) 42%, transparent 72%);
+  filter: blur(20px);
+  opacity: 0.82;
 }
 
 .hero-sigil {
@@ -308,6 +315,11 @@ body {
 }
 
 @media (max-width: 767px) {
+  header {
+    background: rgba(12, 12, 11, 0.96) !important;
+    backdrop-filter: blur(18px);
+  }
+
   header nav {
     height: 4.5rem;
   }
@@ -333,38 +345,34 @@ body {
   }
 
   .hero-visual {
-    filter: brightness(1.24) contrast(1.06);
-    transform: scale(1.22) translateY(-5%) !important;
+    filter: brightness(0.78) contrast(1.08);
+    transform: scale(1.08) translateY(1%) !important;
     transform-origin: center bottom;
-  }
-
-  .hero-mobile-athlete {
-    position: absolute;
-    inset: auto 0 0 0;
-    display: block;
-    height: 55%;
-    opacity: 1;
-    filter: brightness(1.85) contrast(1.12);
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 94%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 94%, transparent 100%);
   }
 
   .hero-vignette {
     background:
       radial-gradient(circle at 50% 34%, rgba(214, 212, 207, 0.1), transparent 31%),
-      linear-gradient(180deg, rgba(11, 11, 11, 0.08) 0%, rgba(11, 11, 11, 0.02) 45%, rgba(11, 11, 11, 0.22) 100%);
+      linear-gradient(180deg, rgba(11, 11, 11, 0.18) 0%, rgba(11, 11, 11, 0.08) 45%, rgba(11, 11, 11, 0.56) 100%);
   }
 
   .hero-side-shade {
-    background: linear-gradient(90deg, rgba(11, 11, 11, 0.18) 0%, rgba(11, 11, 11, 0.02) 46%, rgba(11, 11, 11, 0.16) 100%);
+    background: linear-gradient(90deg, rgba(11, 11, 11, 0.32) 0%, rgba(11, 11, 11, 0.08) 46%, rgba(11, 11, 11, 0.28) 100%);
   }
 
   .hero-brand-layer {
     left: 1.25rem;
     right: 1.25rem;
-    top: 27vh;
+    top: 18vh;
     bottom: auto;
     width: auto;
+  }
+
+  .hero-brand-layer::before {
+    inset: -1.9rem -1.25rem;
+    background: radial-gradient(circle at 35% 45%, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.54) 46%, transparent 74%);
+    filter: blur(18px);
+    opacity: 0.95;
   }
 
   .hero-sigil {
@@ -376,9 +384,9 @@ body {
   }
 
   .hero-tagline {
-    order: -1;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    order: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
     font-size: 0.72rem;
     letter-spacing: 0.28em;
   }

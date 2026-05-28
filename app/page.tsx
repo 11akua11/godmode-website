@@ -142,15 +142,6 @@ export default function Home() {
             priority
             sizes="100vw"
           />
-          <div className="hero-mobile-athlete">
-            <Image
-              src="/godmode-hero-clean.png"
-              alt=""
-              fill
-              className="object-cover object-bottom"
-              sizes="100vw"
-            />
-          </div>
           <div className="hero-vignette absolute inset-0" />
           <div className="hero-side-shade absolute inset-0" />
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-obsidian to-transparent" />

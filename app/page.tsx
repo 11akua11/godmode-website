@@ -109,11 +109,12 @@ export default function Home() {
             src="/godmode-hero.png"
             alt="GODMODE athlete in a cinematic brutalist studio"
             fill
-            className="hero-visual object-cover object-[62%_50%]"
+            className="hero-visual object-cover object-[70%_50%] sm:object-[62%_50%]"
             priority
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,11,11,0.35)_0%,rgba(11,11,11,0.18)_34%,rgba(11,11,11,0.08)_64%,rgba(11,11,11,0.54)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,11,0.12)_0%,rgba(11,11,11,0.18)_40%,rgba(11,11,11,0.92)_100%)] sm:hidden" />
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-obsidian to-transparent" />
           <div className="light-sweep absolute -left-1/4 top-0 h-full w-1/2 rotate-12 bg-gradient-to-r from-transparent via-champagne/10 to-transparent blur-2xl" />
         </div>
@@ -124,9 +125,14 @@ export default function Home() {
             className="hero-hotspot"
             aria-label="Purchase the GODMODE 7 Day Reset Protocol"
           />
-          <div className="absolute inset-x-5 bottom-8 sm:hidden">
+          <div className="mobile-hero-copy sm:hidden">
+            <p className="eyebrow">Demon hand. Buddha heart.</p>
+            <h1 className="mt-5 font-display text-[3.6rem] font-bold uppercase leading-[0.82] text-bone">GODMODE</h1>
+            <p className="support-copy mt-6">
+              A 7 day reset for body, mind and spirit.
+            </p>
             <a href={protocolCheckoutUrl} className="primary-cta">
-              Purchase 7 Day Reset
+              Initiate 7 Day Reset
             </a>
           </div>
         </div>
@@ -249,7 +255,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="grid gap-10 border border-bone/10 bg-[linear-gradient(135deg,rgba(26,26,26,0.92),rgba(11,11,11,0.96))] p-6 sm:p-10 lg:grid-cols-[1fr_0.72fr] lg:p-14"
+          className="grid gap-8 border border-bone/10 bg-[linear-gradient(135deg,rgba(26,26,26,0.92),rgba(11,11,11,0.96))] p-5 sm:p-10 lg:grid-cols-[1fr_0.72fr] lg:p-14"
         >
           <div>
             <p className="eyebrow">Enter the protocol</p>

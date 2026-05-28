@@ -283,6 +283,16 @@ body {
   line-height: 0.86;
 }
 
+.statement-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.38rem, 1.05vw, 0.95rem);
+}
+
+.statement-stack span {
+  display: block;
+}
+
 .section-title {
   margin-top: 1.25rem;
   max-width: 900px;
@@ -388,7 +398,7 @@ body {
   .hero-brand-layer {
     left: 50%;
     right: auto;
-    top: 8.8vh;
+    top: 6.8vh;
     bottom: auto;
     width: calc(100vw - 2.5rem);
     align-items: center;
@@ -408,8 +418,8 @@ body {
 
   .hero-sigil {
     display: block;
-    width: 4.35rem;
-    margin-bottom: 0.65rem;
+    width: 4.1rem;
+    margin-bottom: 0.38rem;
   }
 
   .hero-wordmark {
@@ -418,7 +428,7 @@ body {
 
   .hero-tagline {
     order: 0;
-    margin-top: 0.82rem;
+    margin-top: 0.48rem;
     margin-bottom: 0;
     font-size: 0.72rem;
     letter-spacing: 0.28em;
@@ -429,7 +439,7 @@ body {
   }
 
   .hero-subtext {
-    margin-top: 0.95rem;
+    margin-top: 0.7rem;
     max-width: 20rem;
     font-size: 0.72rem;
     letter-spacing: 0.14em;
@@ -437,7 +447,7 @@ body {
   }
 
   .hero-cta {
-    margin-top: 1.12rem;
+    margin-top: 0.82rem;
     min-width: 0;
     max-width: 21.5rem;
     border-color: rgba(214, 212, 207, 0.72);
@@ -454,6 +464,10 @@ body {
 
   .headline {
     font-size: clamp(2.45rem, 14.2vw, 4rem);
+  }
+
+  .statement-stack {
+    gap: 0.68rem;
   }
 
   .section-title {

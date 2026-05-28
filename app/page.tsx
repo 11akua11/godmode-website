@@ -180,18 +180,16 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <div>
             <p className="eyebrow">The 7 Day Reset Protocol</p>
-            <h1 className="headline">
-              The body obeys.
-              <br />
-              The mind governs.
-              <br />
-              The soul leads.
+            <h1 className="headline statement-stack">
+              <span>The body obeys.</span>
+              <span>The mind governs.</span>
+              <span>The soul leads.</span>
             </h1>
           </div>
           <div className="self-end">
             <p className="support-copy max-w-2xl">
-              A stripped, sovereign reset for disciplined individuals ready to clear noise, restore command, and move
-              with purpose. No spectacle. No guru theatre. Just the protocol.
+              A stripped, sovereign reset for those ready to leave distraction behind, restore inner order, and move
+              with clarity and purpose. No spectacle. No guru theatre. Just the protocol.
             </p>
             <div className="mt-10 grid grid-cols-2 gap-px border border-bone/10 bg-bone/10 sm:grid-cols-7">
               {resetDays.map((day, index) => (

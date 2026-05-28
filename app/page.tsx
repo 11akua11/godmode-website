@@ -30,6 +30,7 @@ const resetDays = ["Hydrate", "Breathe", "Train", "Fast", "Move", "Stillness", "
 
 export default function Home() {
   const pageRef = useRef<HTMLElement>(null);
+  const heroLayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -73,6 +74,29 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    let rafId = 0;
+
+    const updateHeroDepth = () => {
+      const shift = Math.min(window.scrollY * 0.16, 96);
+      heroLayerRef.current?.style.setProperty("--hero-shift", `${shift}px`);
+      rafId = 0;
+    };
+
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(updateHeroDepth);
+    };
+
+    updateHeroDepth();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   return (
     <main ref={pageRef} className="min-h-screen overflow-hidden bg-obsidian text-bone">
       <div className="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_62%_18%,rgba(199,176,122,0.13),transparent_28%),linear-gradient(180deg,rgba(11,11,11,0.12),#0B0B0B_82%)]" />
@@ -81,9 +105,14 @@ export default function Home() {
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-bone/10 bg-obsidian/52 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-[1760px] items-center justify-between px-5 sm:px-8 lg:px-12">
           <a href="#top" className="group flex items-center gap-3" aria-label="GODMODE home">
-            <span className="font-display text-xl font-bold uppercase tracking-widebody text-bone/82 transition duration-500 group-hover:text-champagne sm:text-2xl">
-              GODMODE
-            </span>
+            <Image
+              src="/godmode-wordmark-transparent.png"
+              alt="GODMODE"
+              width={1080}
+              height={250}
+              className="h-auto w-36 object-contain opacity-90 transition duration-500 group-hover:opacity-100 sm:w-44"
+              priority
+            />
           </a>
           <div className="hidden items-center gap-8 xl:flex">
             {navItems.map((item) => (
@@ -106,32 +135,50 @@ export default function Home() {
       <section id="top" className="relative z-10 min-h-screen overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/godmode-hero.png"
-            alt="GODMODE athlete in a cinematic brutalist studio"
+            src="/godmode-hero-clean.png"
+            alt="GODMODE athlete in a cinematic brutalist concrete environment"
             fill
-            className="hero-visual object-cover object-[70%_50%] sm:object-[62%_50%]"
+            className="hero-visual object-cover object-[50%_78%] sm:object-[50%_60%]"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,11,11,0.35)_0%,rgba(11,11,11,0.18)_34%,rgba(11,11,11,0.08)_64%,rgba(11,11,11,0.54)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,11,0.12)_0%,rgba(11,11,11,0.18)_40%,rgba(11,11,11,0.92)_100%)] sm:hidden" />
+          <div className="hero-mobile-athlete">
+            <Image
+              src="/godmode-hero-clean.png"
+              alt=""
+              fill
+              className="object-cover object-bottom"
+              sizes="100vw"
+            />
+          </div>
+          <div className="hero-vignette absolute inset-0" />
+          <div className="hero-side-shade absolute inset-0" />
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-obsidian to-transparent" />
           <div className="light-sweep absolute -left-1/4 top-0 h-full w-1/2 rotate-12 bg-gradient-to-r from-transparent via-champagne/10 to-transparent blur-2xl" />
         </div>
 
         <div className="relative z-10 min-h-[calc(100vh-5rem)]">
-          <a
-            href={protocolCheckoutUrl}
-            className="hero-hotspot"
-            aria-label="Purchase the GODMODE 7 Day Reset Protocol"
-          />
-          <div className="mobile-hero-copy sm:hidden">
-            <p className="eyebrow">Demon hand. Buddha heart.</p>
-            <h1 className="mt-5 font-display text-[3.6rem] font-bold uppercase leading-[0.82] text-bone">GODMODE</h1>
-            <p className="support-copy mt-6">
-              A 7 day reset for body, mind and spirit.
-            </p>
-            <a href={protocolCheckoutUrl} className="primary-cta">
+          <div ref={heroLayerRef} className="hero-brand-layer">
+            <Image
+              src="/godmode-sigil-transparent.png"
+              alt="GODMODE sovereign sigil"
+              width={900}
+              height={1080}
+              className="hero-sigil"
+              priority
+            />
+            <Image
+              src="/godmode-wordmark-transparent.png"
+              alt="GODMODE"
+              width={1080}
+              height={250}
+              className="hero-wordmark"
+              priority
+            />
+            <p className="hero-tagline">Demon hand. Buddha heart.</p>
+            <div className="hero-divider" />
+            <p className="hero-subtext">A modern movement of discipline, alignment and transcendence.</p>
+            <a href={protocolCheckoutUrl} className="primary-cta hero-cta">
               Initiate 7 Day Reset
             </a>
           </div>
@@ -293,11 +340,11 @@ export default function Home() {
       <section className="section-shell py-28 sm:py-36">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <Image
-            src="/godmode-sigil.jpg"
+            src="/godmode-sigil-transparent.png"
             alt="GODMODE sovereign sigil"
-            width={180}
-            height={180}
-            className="mb-12 h-28 w-28 object-contain opacity-90"
+            width={900}
+            height={1080}
+            className="mb-12 h-32 w-32 object-contain opacity-95 drop-shadow-[0_18px_45px_rgba(199,176,122,0.18)]"
           />
           <h2 className="headline">
             We don&apos;t follow paths.

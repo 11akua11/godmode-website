@@ -105,6 +105,81 @@ body {
   background: rgba(199, 176, 122, 0.06);
 }
 
+.hero-vignette {
+  background:
+    radial-gradient(circle at 50% 32%, rgba(214, 212, 207, 0.12), transparent 27%),
+    linear-gradient(180deg, rgba(11, 11, 11, 0.14) 0%, rgba(11, 11, 11, 0.02) 38%, rgba(11, 11, 11, 0.58) 100%);
+}
+
+.hero-side-shade {
+  background: linear-gradient(90deg, rgba(11, 11, 11, 0.54) 0%, rgba(11, 11, 11, 0.08) 38%, rgba(11, 11, 11, 0.3) 100%);
+}
+
+.hero-mobile-athlete {
+  display: none;
+}
+
+.hero-brand-layer {
+  --hero-shift: 0px;
+  position: absolute;
+  left: clamp(1.25rem, 8vw, 9rem);
+  top: clamp(5rem, 15vh, 10rem);
+  width: min(46rem, calc(100vw - 2.5rem));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translate3d(0, calc(var(--hero-shift) * -1), 0);
+  transition: transform 120ms linear;
+  filter: drop-shadow(0 28px 44px rgba(0, 0, 0, 0.62));
+  will-change: transform;
+}
+
+.hero-sigil {
+  width: clamp(5.8rem, 9vw, 10rem);
+  height: auto;
+  margin-bottom: clamp(1.35rem, 2.6vw, 2.4rem);
+  opacity: 0.94;
+  transform: translateZ(0);
+}
+
+.hero-wordmark {
+  width: min(100%, clamp(20rem, 42vw, 45rem));
+  height: auto;
+  opacity: 0.98;
+}
+
+.hero-tagline {
+  margin-top: clamp(1.1rem, 2vw, 1.8rem);
+  color: rgba(199, 176, 122, 0.86);
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(0.75rem, 1.05vw, 1rem);
+  letter-spacing: 0.42em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.hero-divider {
+  margin-top: clamp(1.4rem, 2vw, 2rem);
+  width: 4.25rem;
+  height: 1px;
+  background: rgba(214, 212, 207, 0.58);
+}
+
+.hero-subtext {
+  margin-top: clamp(1.4rem, 2vw, 2rem);
+  max-width: 34rem;
+  color: rgba(214, 212, 207, 0.72);
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+  text-transform: uppercase;
+}
+
+.hero-cta {
+  margin-top: clamp(1.6rem, 2.4vw, 2.4rem);
+}
+
 .mobile-hero-copy {
   position: absolute;
   inset: auto 1.25rem 2rem 1.25rem;
@@ -255,6 +330,72 @@ body {
 
   .hero-hotspot {
     display: none;
+  }
+
+  .hero-visual {
+    filter: brightness(1.24) contrast(1.06);
+    transform: scale(1.22) translateY(-5%) !important;
+    transform-origin: center bottom;
+  }
+
+  .hero-mobile-athlete {
+    position: absolute;
+    inset: auto 0 0 0;
+    display: block;
+    height: 55%;
+    opacity: 1;
+    filter: brightness(1.85) contrast(1.12);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 94%, transparent 100%);
+  }
+
+  .hero-vignette {
+    background:
+      radial-gradient(circle at 50% 34%, rgba(214, 212, 207, 0.1), transparent 31%),
+      linear-gradient(180deg, rgba(11, 11, 11, 0.08) 0%, rgba(11, 11, 11, 0.02) 45%, rgba(11, 11, 11, 0.22) 100%);
+  }
+
+  .hero-side-shade {
+    background: linear-gradient(90deg, rgba(11, 11, 11, 0.18) 0%, rgba(11, 11, 11, 0.02) 46%, rgba(11, 11, 11, 0.16) 100%);
+  }
+
+  .hero-brand-layer {
+    left: 1.25rem;
+    right: 1.25rem;
+    top: 27vh;
+    bottom: auto;
+    width: auto;
+  }
+
+  .hero-sigil {
+    display: none;
+  }
+
+  .hero-wordmark {
+    width: min(100%, 21rem);
+  }
+
+  .hero-tagline {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+  }
+
+  .hero-divider {
+    display: none;
+  }
+
+  .hero-subtext {
+    margin-top: 1.1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    margin-top: 1.35rem;
   }
 
   .status-tag {

@@ -8,6 +8,9 @@ import { gsap } from "gsap";
 
 const navItems = ["Protocols", "Apparel", "Supplements", "Journal", "About", "Community"];
 
+const protocolCheckoutUrl = "https://buy.stripe.com/5kQ5kx5mp1FO9FRbEc0Ba00";
+const activationCheckoutUrl = "https://buy.stripe.com/00weV74ildowaJVeQo0Ba01";
+
 const protocols = [
   {
     title: "Body",
@@ -93,7 +96,7 @@ export default function Home() {
             <a href="#protocol" className="hidden text-[0.72rem] uppercase tracking-ritual text-bone/70 sm:block">
               Log in
             </a>
-            <a href="#purchase" className="join-button">
+            <a href={protocolCheckoutUrl} className="join-button">
               Join
             </a>
           </div>
@@ -116,9 +119,13 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 min-h-[calc(100vh-5rem)]">
-          <a href="#purchase" className="hero-hotspot" aria-label="Purchase the GODMODE 7 Day Reset Protocol" />
+          <a
+            href={protocolCheckoutUrl}
+            className="hero-hotspot"
+            aria-label="Purchase the GODMODE 7 Day Reset Protocol"
+          />
           <div className="absolute inset-x-5 bottom-8 sm:hidden">
-            <a href="#purchase" className="primary-cta">
+            <a href={protocolCheckoutUrl} className="primary-cta">
               Purchase 7 Day Reset
             </a>
           </div>
@@ -252,14 +259,27 @@ export default function Home() {
               and initiate the next standard.
             </p>
           </div>
-          <div className="flex flex-col justify-between border-t border-bone/10 pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
-            <div>
-              <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Protocol access</span>
-              <p className="mt-7 font-display text-5xl font-bold uppercase text-bone sm:text-6xl">7 Days</p>
-            </div>
-            <a href="mailto:hello@godmode.co?subject=Purchase%207%20Day%20Reset%20Protocol" className="primary-cta mt-10">
-              Enter GODMODE Protocol
-            </a>
+          <div className="grid gap-px border-t border-bone/10 bg-bone/10 pt-px lg:border-l lg:border-t-0 lg:pl-10">
+            <article className="flex flex-col justify-between bg-obsidian/90 p-6">
+              <div>
+                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Protocol access</span>
+                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$47</p>
+                <p className="support-copy mt-5">Complete 7 day reset protocol.</p>
+              </div>
+              <a href={protocolCheckoutUrl} className="primary-cta mt-9">
+                Enter Protocol
+              </a>
+            </article>
+            <article className="flex flex-col justify-between bg-obsidian/90 p-6">
+              <div>
+                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Activation tier</span>
+                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$147</p>
+                <p className="support-copy mt-5">Protocol plus one 30 minute 1:1 activation call.</p>
+              </div>
+              <a href={activationCheckoutUrl} className="primary-cta mt-9">
+                Add Activation Call
+              </a>
+            </article>
           </div>
         </motion.div>
       </section>
@@ -278,7 +298,7 @@ export default function Home() {
             <br />
             We forge them.
           </h2>
-          <a href="#purchase" className="primary-cta mt-12">
+          <a href={protocolCheckoutUrl} className="primary-cta mt-12">
             Enter GODMODE
           </a>
         </div>

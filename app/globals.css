@@ -114,17 +114,17 @@ body {
 }
 
 .hero-visual {
-  filter: contrast(1.1) saturate(1.06) brightness(1.03);
+  filter: contrast(1.12) saturate(1.08) brightness(1.08);
 }
 
 .hero-vignette {
   background:
-    radial-gradient(circle at 50% 29%, rgba(214, 212, 207, 0.16), transparent 26%),
-    linear-gradient(180deg, rgba(11, 11, 11, 0.18) 0%, rgba(11, 11, 11, 0.03) 38%, rgba(11, 11, 11, 0.48) 100%);
+    radial-gradient(circle at 50% 29%, rgba(214, 212, 207, 0.2), transparent 27%),
+    linear-gradient(180deg, rgba(11, 11, 11, 0.12) 0%, rgba(11, 11, 11, 0.01) 38%, rgba(11, 11, 11, 0.38) 100%);
 }
 
 .hero-side-shade {
-  background: linear-gradient(90deg, rgba(11, 11, 11, 0.54) 0%, rgba(11, 11, 11, 0.08) 38%, rgba(11, 11, 11, 0.3) 100%);
+  background: linear-gradient(90deg, rgba(11, 11, 11, 0.42) 0%, rgba(11, 11, 11, 0.04) 38%, rgba(11, 11, 11, 0.22) 100%);
 }
 
 .hero-brand-layer {
@@ -293,6 +293,16 @@ body {
   display: block;
 }
 
+.final-statement {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.85rem, 1.8vw, 1.7rem);
+}
+
+.final-statement span {
+  display: block;
+}
+
 .section-title {
   margin-top: 1.25rem;
   max-width: 900px;
@@ -334,6 +344,24 @@ body {
   padding: clamp(2rem, 7vw, 7rem);
   display: flex;
   align-items: center;
+}
+
+.community-image {
+  filter: brightness(1.14) contrast(1.06);
+}
+
+.reset-mark-tile {
+  min-height: 9.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(214, 212, 207, 0.08), transparent 64%),
+    rgba(26, 26, 26, 0.78);
+}
+
+.reset-mark-tile img {
+  opacity: 0.18;
 }
 
 @media (min-width: 640px) {
@@ -380,19 +408,19 @@ body {
   }
 
   .hero-visual {
-    filter: contrast(1.12) saturate(1.08) brightness(1.04);
+    filter: contrast(1.12) saturate(1.08) brightness(1.1);
     transform: none !important;
     transform-origin: center bottom;
   }
 
   .hero-vignette {
     background:
-      radial-gradient(circle at 50% 28%, rgba(214, 212, 207, 0.08), transparent 30%),
-      linear-gradient(180deg, rgba(11, 11, 11, 0.12) 0%, rgba(11, 11, 11, 0.02) 48%, rgba(11, 11, 11, 0.2) 100%);
+      radial-gradient(circle at 50% 28%, rgba(214, 212, 207, 0.11), transparent 31%),
+      linear-gradient(180deg, rgba(11, 11, 11, 0.08) 0%, rgba(11, 11, 11, 0) 48%, rgba(11, 11, 11, 0.16) 100%);
   }
 
   .hero-side-shade {
-    background: linear-gradient(90deg, rgba(11, 11, 11, 0.14) 0%, transparent 48%, rgba(11, 11, 11, 0.12) 100%);
+    background: linear-gradient(90deg, rgba(11, 11, 11, 0.1) 0%, transparent 48%, rgba(11, 11, 11, 0.08) 100%);
   }
 
   .hero-brand-layer {
@@ -486,6 +514,42 @@ body {
 
   .community-panel {
     min-height: 470px;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .community-panel .headline {
+    max-width: 100%;
+    font-size: clamp(2.65rem, 13.8vw, 3.65rem);
+    line-height: 0.9;
+  }
+
+  .community-content {
+    width: 100%;
+    max-width: 21rem;
+  }
+
+  .community-content .support-copy {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20rem;
+  }
+
+  .community-image {
+    object-position: center bottom;
+    opacity: 0.56;
+  }
+
+  .community-overlay {
+    background:
+      radial-gradient(circle at 50% 42%, rgba(11, 11, 11, 0.32), transparent 50%),
+      linear-gradient(180deg, rgba(11, 11, 11, 0.62), rgba(11, 11, 11, 0.42));
+  }
+
+  .final-statement {
+    gap: 1.15rem;
   }
 
   .section-shell {

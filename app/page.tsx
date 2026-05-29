@@ -200,6 +200,15 @@ export default function Home() {
                   <span className="mt-8 block font-display text-sm uppercase tracking-widebody text-bone">{day}</span>
                 </div>
               ))}
+              <div className="reset-mark-tile bg-titanium/80 p-4 sm:hidden" aria-hidden="true">
+                <Image
+                  src="/godmode-wordmark-transparent.png"
+                  alt=""
+                  width={1080}
+                  height={250}
+                  className="w-32 opacity-18"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -268,14 +277,14 @@ export default function Home() {
       <section id="community" className="section-shell">
         <div className="community-panel">
           <Image
-            src="/godmode-hero.png"
+            src="/godmode-hero-clean.png"
             alt="Dark GODMODE community atmosphere"
             fill
-            className="object-cover object-right opacity-45"
+            className="community-image object-cover object-right opacity-45"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/78 to-obsidian/20" />
-          <div className="relative z-10 max-w-3xl">
+          <div className="community-overlay absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/78 to-obsidian/20" />
+          <div className="community-content relative z-10 max-w-3xl">
             <p className="eyebrow">Community</p>
             <h2 className="headline">Join the movement.</h2>
             <p className="support-copy mt-8 max-w-xl">
@@ -315,7 +324,7 @@ export default function Home() {
             <article className="flex flex-col justify-between bg-obsidian/90 p-6">
               <div>
                 <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Activation tier</span>
-                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$147</p>
+                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$144</p>
                 <p className="support-copy mt-5">Protocol plus one 30 minute 1:1 activation call.</p>
               </div>
               <a href={activationCheckoutUrl} className="primary-cta mt-9">
@@ -335,10 +344,9 @@ export default function Home() {
             height={1080}
             className="mb-12 h-32 w-32 object-contain opacity-95 drop-shadow-[0_18px_45px_rgba(199,176,122,0.18)]"
           />
-          <h2 className="headline">
-            We don&apos;t follow paths.
-            <br />
-            We forge them.
+          <h2 className="headline final-statement">
+            <span>We don&apos;t follow paths.</span>
+            <span>We forge them.</span>
           </h2>
           <a href={protocolCheckoutUrl} className="primary-cta mt-12">
             Enter GODMODE

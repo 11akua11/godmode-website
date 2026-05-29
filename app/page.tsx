@@ -138,7 +138,15 @@ export default function Home() {
             src="/godmode-hero-clean.png"
             alt="GODMODE athlete in a cinematic brutalist concrete environment"
             fill
-            className="hero-visual object-cover object-[50%_78%] sm:object-[50%_60%]"
+            className="hero-visual hero-visual-mobile object-cover object-[50%_78%] md:hidden"
+            priority
+            sizes="100vw"
+          />
+          <Image
+            src="/godmode-hero.png"
+            alt="GODMODE athlete in a cinematic brutalist concrete environment"
+            fill
+            className="hero-visual hero-visual-desktop hidden object-cover md:block"
             priority
             sizes="100vw"
           />
@@ -149,7 +157,8 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 min-h-[calc(100vh-5rem)]">
-          <div ref={heroLayerRef} className="hero-brand-layer">
+          <a href={protocolCheckoutUrl} className="hero-hotspot hidden md:block" aria-label="Initiate 7 Day Reset" />
+          <div ref={heroLayerRef} className="hero-brand-layer md:hidden">
             <Image
               src="/godmode-sigil-transparent.png"
               alt="GODMODE sovereign sigil"
@@ -280,7 +289,14 @@ export default function Home() {
             src="/godmode-hero-clean.png"
             alt="Dark GODMODE community atmosphere"
             fill
-            className="community-image object-cover object-right opacity-45"
+            className="community-image community-image-mobile object-cover object-right opacity-45 md:hidden"
+            sizes="100vw"
+          />
+          <Image
+            src="/godmode-hero.png"
+            alt="Dark GODMODE community atmosphere"
+            fill
+            className="community-image community-image-desktop hidden object-cover opacity-55 md:block"
             sizes="100vw"
           />
           <div className="community-overlay absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/78 to-obsidian/20" />

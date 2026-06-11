@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GODMODE | 7 Day Reset Protocol",
+  title: "GODMODE | Reset Protocol + Food of the Gods",
   description:
-    "A modern movement of discipline, alignment and transcendence. Enter the 7 Day Reset Protocol."
+    "Enter the GODMODE Reset Bundle: the 7 Day Reset Protocol paired with Food of the Gods."
 };
 
 export default function RootLayout({

@@ -9,12 +9,12 @@ import { gsap } from "gsap";
 const navItems = ["Protocols", "Apparel", "Supplements", "Journal", "About", "Community"];
 
 const protocolCheckoutUrl = "https://buy.stripe.com/cNiaER3eh0BK3htfUs0Ba02";
-const foodOfGodsUrl = "https://immortalblendssuperfood.com.au/product/food-of-the-gods/";
+const activationCheckoutUrl = "https://buy.stripe.com/cNiaER3eh0BK3htfUs0Ba02";
 
 const protocols = [
   {
     title: "Body",
-    text: "Strength, endurance, movement and ritual nutrition calibrated into daily physical command."
+    text: "Strength, endurance and movement calibrated into daily physical command."
   },
   {
     title: "Mind",
@@ -198,7 +198,7 @@ export default function Home() {
           <div className="self-end">
             <p className="support-copy max-w-2xl">
               A stripped, sovereign reset for those ready to leave distraction behind, restore inner order, and move
-              with clarity and purpose. Now paired with Food of the Gods as the daily fuel component of the protocol.
+              with clarity and purpose. No spectacle. No guru theatre. Just the protocol.
             </p>
             <div className="mt-10 grid grid-cols-2 gap-px border border-bone/10 bg-bone/10 sm:grid-cols-7">
               {resetDays.map((day, index) => (
@@ -219,31 +219,6 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="supplements" className="section-shell border-t border-bone/10">
-        <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
-          <div>
-            <p className="eyebrow">Protocol fuel</p>
-            <h2 className="section-title">Food of the Gods.</h2>
-          </div>
-          <div>
-            <p className="support-copy max-w-2xl">
-              The physical protocol is now anchored by Food of the Gods: an Australian-made superfood blend built from
-              44 plant-based ingredients and designed to support the body through seven days of disciplined reset.
-            </p>
-            <div className="mt-10 grid gap-px border border-bone/10 bg-bone/10 sm:grid-cols-3">
-              {["Daily fuel", "Superfood blend", "Protocol included"].map((item) => (
-                <div key={item} className="bg-titanium/80 p-5">
-                  <span className="font-display text-xs uppercase tracking-widebody text-bone/62">{item}</span>
-                </div>
-              ))}
-            </div>
-            <a href={foodOfGodsUrl} className="primary-cta mt-10">
-              View Food of the Gods
-            </a>
           </div>
         </div>
       </section>
@@ -345,18 +320,18 @@ export default function Home() {
         >
           <div>
             <p className="eyebrow">Enter the protocol</p>
-            <h2 className="section-title">Enter the reset bundle.</h2>
+            <h2 className="section-title">Purchase the 7 Day Reset.</h2>
             <p className="support-copy mt-8 max-w-2xl">
-              Receive the 7 Day Reset Protocol and Food of the Gods as one integrated system for discipline, fuel,
-              breathwork and daily command.
+              Seven days of disciplined calibration across body, mind and spirit. Built to clear noise, restore command,
+              and initiate the next standard.
             </p>
           </div>
           <div className="grid gap-px border-t border-bone/10 bg-bone/10 pt-px lg:border-l lg:border-t-0 lg:pl-10">
             <article className="flex flex-col justify-between bg-obsidian/90 p-6">
               <div>
-                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Reset bundle</span>
-                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$97</p>
-                <p className="support-copy mt-5">Food of the Gods plus complete 7 day reset protocol.</p>
+                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Protocol access</span>
+                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$47</p>
+                <p className="support-copy mt-5">Complete 7 day reset protocol.</p>
               </div>
               <a href={protocolCheckoutUrl} className="primary-cta mt-9">
                 Enter Protocol
@@ -364,14 +339,12 @@ export default function Home() {
             </article>
             <article className="flex flex-col justify-between bg-obsidian/90 p-6">
               <div>
-                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Included access</span>
-                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">01</p>
-                <p className="support-copy mt-5">
-                  Digital protocol, meal breakdown, breathwork guide and Food of the Gods fulfilment.
-                </p>
+                <span className="font-display text-xs uppercase tracking-ritual text-champagne/70">Activation tier</span>
+                <p className="mt-7 font-display text-4xl font-bold uppercase text-bone sm:text-5xl">A$144</p>
+                <p className="support-copy mt-5">Protocol plus one 30 minute 1:1 activation call.</p>
               </div>
-              <a href={protocolCheckoutUrl} className="primary-cta mt-9">
-                Purchase Bundle
+              <a href={activationCheckoutUrl} className="primary-cta mt-9">
+                Add Activation Call
               </a>
             </article>
           </div>
